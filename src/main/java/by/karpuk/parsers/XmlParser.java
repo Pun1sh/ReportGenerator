@@ -26,7 +26,7 @@ public class XmlParser implements Parser {
         } catch (XMLStreamException | JAXBException e) {
             e.printStackTrace();
         } catch (IOException e) {
-            System.out.println("Settings file hasn't been found");
+            System.out.println("Settings not found");
         }
     }
 
