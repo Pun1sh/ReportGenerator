@@ -8,11 +8,10 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
-public class TsvParser implements Parser{
+public class TsvParser implements Parser {
 
-    public static final String delimeter = "\t";
+    private List<String[]> tsvParserResult;
 
-    List<String[]> tsvParserResult;
     @Override
     public void parse(String fileName) {
         TsvParserSettings settings = new TsvParserSettings();
