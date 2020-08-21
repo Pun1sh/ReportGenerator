@@ -19,18 +19,12 @@ public class TxtReportGenerator implements ReportGenerator {
         PageGenerator pageGenerator = new PageGenerator(settings);
         result = pageGenerator.generate(inputData);
 
-        try {
-
-            File fileDir = new File("report.txt");
-
-            Writer out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fileDir), "UTF-16"));
+        try (Writer out = new BufferedWriter(new OutputStreamWriter
+                (new FileOutputStream(new File("report.txt")), "UTF-16"))) {
 
             for (String line : result) {
                 out.append(line).append(NEW_LINE);
             }
-
-            out.flush();
-            out.close();
 
         } catch (IOException e) {
             e.printStackTrace();

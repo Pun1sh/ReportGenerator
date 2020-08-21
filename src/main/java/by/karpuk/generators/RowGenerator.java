@@ -12,9 +12,9 @@ public class RowGenerator {
     private static final char COLUMN_DELIMITER = '|';
     private static final char ROW_DELIMITER = '-';
 
-    String row;
-    String headRow;
-    String delimiterRow;
+    private String row;
+    private String headRow;
+    private String delimiterRow;
     private Settings settings;
 
     public void setSettings(Settings settings) {
@@ -49,7 +49,7 @@ public class RowGenerator {
         this.delimiterRow = delimiterRow;
     }
 
-    public String generate(String[] data){
+    public String generate(String[] data) {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(COLUMN_DELIMITER);
         for (int i = 0; i < settings.getColumns().size(); i++) {
@@ -62,8 +62,8 @@ public class RowGenerator {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(WORD_DELIMITER);
         stringBuilder.append(s);
-        int diffSize = columnWidth - s.length() ;
-        if(diffSize > 0) {
+        int diffSize = columnWidth - s.length();
+        if (diffSize > 0) {
             stringBuilder.append(StringUtils.repeat(" ", diffSize));
         }
         stringBuilder.append(WORD_DELIMITER).append(COLUMN_DELIMITER);
@@ -78,7 +78,7 @@ public class RowGenerator {
 
         String[] columnsTitlesStringArray = new String[columns.size()];
         int i = 0;
-        for (ColumnConfig column: columns) {
+        for (ColumnConfig column : columns) {
             columnsTitlesStringArray[i] = column.getTitle();
             i++;
         }
