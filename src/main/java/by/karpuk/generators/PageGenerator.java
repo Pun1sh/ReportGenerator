@@ -34,9 +34,7 @@ public class PageGenerator {
         result.add(rowGenerator.getHeadRow());
         result.add(rowGenerator.getDelimiterRow());
         for (String[] dataRow : inputData) {
-            /**
-             * Count row's height
-             */
+
             int i = 0;
             int height = 1;
             for (ColumnConfig column : settings.getColumns()) {
